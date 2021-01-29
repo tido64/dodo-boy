@@ -1,0 +1,69 @@
+{
+  "data": {
+    "trip": {
+      "tripPatterns": [
+        {
+          "legs": [
+            {
+              "aimedStartTime": "2021-02-06T14:03:04+0100",
+              "mode": "foot",
+              "line": null
+            }
+          ]
+        },
+        {
+          "legs": [
+            {
+              "aimedStartTime": "2021-02-06T14:04:29+0100",
+              "mode": "foot",
+              "line": null
+            },
+            {
+              "aimedStartTime": "2021-02-06T14:03:00+0100",
+              "mode": "bus",
+              "toPlace": {
+                "name": "Oslo bussterminal"
+              },
+              "line": {
+                "id": "RUT:Line:300",
+                "name": "Blystadlia - Ahus - Oslo bussterminal",
+                "publicCode": "300"
+              }
+            },
+            {
+              "aimedStartTime": "2021-02-06T14:08:50+0100",
+              "mode": "foot",
+              "line": null
+            }
+          ]
+        },
+        {
+          "legs": [
+            {
+              "aimedStartTime": "2021-02-05T14:04:29+0100",
+              "mode": "foot",
+              "line": null
+            },
+            {
+              "aimedStartTime": "2021-02-05T14:03:00+0100",
+              "mode": "bus",
+              "toPlace": {
+                "name": "Oslo bussterminal"
+              },
+              "line": {
+                "id": "RUT:Line:300",
+                "name": "Blystadlia - Ahus - Oslo bussterminal",
+                "publicCode": "300"
+              }
+            },
+            {
+              "aimedStartTime": "2021-02-05T14:08:50+0100",
+              "mode": "foot",
+              "line": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

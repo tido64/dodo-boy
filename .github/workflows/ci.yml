@@ -1,0 +1,26 @@
+name: ci
+on:
+  push:
+    branches: [trunk]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache /.venv
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: dodo-${{ hashFiles('requirements.txt') }}
+      - name: Set up Python virtual environment
+        run: ./py
+      - name: Check
+        run: ./py check
+      - name: Test
+        run: ./py test

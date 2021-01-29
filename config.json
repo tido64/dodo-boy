@@ -1,0 +1,28 @@
+{
+  "locale": "nb_no",
+  "dateFormat": "ddd, D MMM HH:mm",
+  "home": {
+    "lat": 59.90706253051758,
+    "lon": 10.760673522949219
+  },
+  "trips": [
+    {
+      "destination": {
+        "place": "NSR:StopPlace:337",
+        "name": "Oslo S"
+      },
+      "entries": 2
+    },
+    {
+      "destination": {
+        "place": "NSR:StopPlace:4489",
+        "name": "Lillestrøm bussterminal"
+      },
+      "entries": 2
+    }
+  ],
+  "inky": {
+    "type": "phat",
+    "colour": "black"
+  }
+}
