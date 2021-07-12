@@ -20,7 +20,7 @@ pylint==2.9.3
 pyparsing==2.4.7
 pytest==6.2.4
 python-dateutil==2.8.1
-regex==2021.7.1
+regex==2021.7.6
 six==1.16.0
 toml==0.10.2
 typed-ast==1.4.3
