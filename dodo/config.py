@@ -31,7 +31,7 @@ def read_config(path: str) -> Config:
     :returns: Configuration object parsed from the configuration file
     :rtype: Config
     """
-    with open(path, "r") as config_file:
+    with open(path, encoding="utf-8") as config_file:
         config: Dict[str, Any] = json.load(config_file)
     return Config(
         locale=config["locale"],

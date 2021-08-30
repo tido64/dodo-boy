@@ -15,7 +15,7 @@ def test_get_current_data() -> None:
     """get_current_data() returns air temperature and weather symbol to display"""
     source_dir: str = os.path.dirname(__file__)
     test_data: str = os.path.join(source_dir, "weather_met_no_test.json")
-    with open(test_data, "r") as response:
+    with open(test_data, encoding="utf-8") as response:
         forecast: Forecast = get_current_data(response.read())
     assert forecast.air_temperature == -12.3
     assert forecast.symbol == "partlycloudy_night"

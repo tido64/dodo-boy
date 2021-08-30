@@ -16,7 +16,7 @@ def test_parse_trips() -> None:
     """parse_trips() returns trips to display"""
     source_dir: str = os.path.dirname(__file__)
     test_data: str = os.path.join(source_dir, "trip_entur_org_test.json")
-    with open(test_data, "r") as response:
+    with open(test_data, encoding="utf-8") as response:
         trips: List[Trip] = parse_trips(response.read())
 
     assert len(trips) == 2
