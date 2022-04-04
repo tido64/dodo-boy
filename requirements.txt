@@ -3,7 +3,7 @@ arrow==1.2.2
 astroid==2.9.3
 attrs==21.4.0
 black==22.3.0
-click==8.0.4
+click==8.1.2
 font-roboto==0.0.1
 iniconfig==1.1.1
 isort==5.10.1
