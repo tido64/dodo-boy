@@ -18,7 +18,7 @@ Pillow==9.1.1
 platformdirs==2.5.2
 pluggy==1.0.0
 py==1.11.0
-pylint==2.14.1
+pylint==2.14.3
 pyparsing==3.0.9
 pytest==7.1.2
 python-dateutil==2.8.2
