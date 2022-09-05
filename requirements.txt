@@ -1,5 +1,5 @@
 appdirs==1.4.4
-arrow==1.2.2
+arrow==1.2.3
 astroid==2.11.6
 attrs==22.1.0
 black==22.8.0
