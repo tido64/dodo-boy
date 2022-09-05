@@ -15,7 +15,7 @@ else
 fi
 
 if [[ ! -f "$venv_activate" ]]; then
-  python -m venv "$virtual_env"
+  python3 -m venv "$virtual_env"
   source "$venv_activate"
   pip install --quiet --requirement "$project_root/requirements.txt"
 else
@@ -56,7 +56,7 @@ case ${1-} in
     ;;
   "run")
     shift
-    python dodo $*
+    python3 dodo $*
     ;;
   "test")
     shift
