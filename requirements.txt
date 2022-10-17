@@ -1,6 +1,6 @@
 appdirs==1.4.4
 arrow==1.2.3
-astroid==2.12.10
+astroid==2.12.11
 attrs==22.1.0
 black==22.10.0
 click==8.1.3
