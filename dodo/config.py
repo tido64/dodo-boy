@@ -61,6 +61,6 @@ def get_config() -> Config:
     try:
         return read_config("config.json" if args.config is None else args.config)
     except (FileNotFoundError, IsADirectoryError) as err:
-        sys.exit(err)
+        sys.exit(err.strerror)
     except TypeError:
         sys.exit("No configuration file was specified")
