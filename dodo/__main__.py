@@ -67,7 +67,7 @@ print(output)
 
 display = Display(config.inky)
 
-image = Image.new("P", display.size(), display.WHITE)
+image = Image.new(display.image_mode(), display.size(), display.WHITE)
 draw = ImageDraw.Draw(image)
 font = ImageFont.truetype(Roboto, 16)
 draw.multiline_text((4, 4), output, display.BLACK, font)

@@ -35,17 +35,23 @@ class Display:
             self.WHITE = 255  # pylint: disable=invalid-name
             self.BLACK = 0  # pylint: disable=invalid-name
 
+    def image_mode(self) -> str:
+        """Returns image mode as defined by Pillow."""
+        return "P" if self.__has_display() else "L"
+
     def present(self, image: Image) -> None:
         """Presents specified image."""
-        try:
+        if not self.__has_display():
+            image.show()
+        else:
             self.inky_display.set_image(image)
             self.inky_display.show()
-        except AttributeError:
-            image.show()
 
     def size(self) -> Tuple[int, int]:
         """Returns size of display."""
-        try:
-            return (self.inky_display.WIDTH, self.inky_display.HEIGHT)
-        except AttributeError:
+        if not self.__has_display():
             return (self.WIDTH, self.HEIGHT)
+        return (self.inky_display.WIDTH, self.inky_display.HEIGHT)
+
+    def __has_display(self) -> bool:
+        return hasattr(self, "inky_display")
