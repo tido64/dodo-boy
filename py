@@ -5,6 +5,9 @@
 
 set -eu
 
+dependencies=(Pillow arrow font-roboto)
+dev_dependencies=(black mypy pylint pytest)
+
 project_root=$(cd -P "$(dirname $0)" && pwd)
 virtual_env="$project_root/.venv"
 
@@ -17,6 +20,7 @@ fi
 if [[ ! -f "$venv_activate" ]]; then
   python3 -m venv "$virtual_env"
   source "$venv_activate"
+  #pip install ${dependencies[*]} ${dev_dependencies[*]}
   pip install --quiet --requirement "$project_root/requirements.txt"
 else
   source "$venv_activate"
@@ -50,7 +54,7 @@ case ${1-} in
   "install")
     sudo apt update
     sudo apt install --assume-yes libatlas-base-dev libopenjp2-7 libtiff5 python3-pip
-    sudo pip3 install Pillow arrow font-roboto inky[rpi,fonts]
+    sudo pip3 install inky[rpi] ${dependencies[*]}
     sudo echo "* * * * * python3 $project_root/dodo -c $project_root/config.json" >> /etc/crontab
     sudo systemctl enable cron
     ;;
@@ -63,9 +67,7 @@ case ${1-} in
     pytest $*
     ;;
   "upgrade")
-    pip list --outdated --local --format freeze  \
-      | awk -F '==' '{print $1}'                 \
-      | xargs pip install --upgrade
+    pip install --upgrade ${dependencies[*]} ${dev_dependencies[*]}
     pip freeze > "$project_root/requirements.txt"
     ;;
   *)
