@@ -138,6 +138,45 @@ Log in with guest/guest.
 Configures your Inky pHAT e-ink display. Valid values for the `colour` property
 include `red`, `yellow` or `black`.
 
+## Power Savings
+
+### Raspberry Pi Zero
+
+Add the following lines to `/etc/rc.local` to disable HDMI and the LED:
+
+```sh
+# Disable HDMI
+/usr/bin/tvservice -o
+
+# Set the ACT LED trigger to 'none'
+echo none | sudo tee /sys/class/leds/led0/trigger
+
+# Turn off the ACT LED
+echo 0 | sudo tee /sys/class/leds/led0/brightness
+```
+
+Alternatively, the LED can also be disabled in `/boot/config.txt`:
+
+```ini
+ # Disable the ACT LED
+dtparam=act_led_trigger=none
+dtparam=act_led_activelow=on
+```
+
+Disable the on-board Bluetooth in `/boot/config.txt`:
+
+```ini
+# Disable Bluetooth
+dtoverlay=disable-bt
+```
+
+And uninstall BlueZ:
+
+```sh
+sudo apt purge --yes bluez
+sudo apt autoremove --yes
+```
+
 ## Contributing
 
 A Python virtual environment is used for development purposes. The script, `py`,
