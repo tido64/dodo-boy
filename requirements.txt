@@ -17,7 +17,7 @@ pathspec==0.11.0
 Pillow==9.4.0
 platformdirs==3.0.0
 pluggy==1.0.0
-pylint==2.16.2
+pylint==2.16.3
 pytest==7.2.1
 python-dateutil==2.8.2
 six==1.16.0
