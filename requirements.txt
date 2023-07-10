@@ -4,7 +4,7 @@ attrs==23.1.0
 black==23.3.0
 click==8.1.4
 dill==0.3.6
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
 font-roboto==0.0.1
 iniconfig==2.0.0
 isort==5.12.0
