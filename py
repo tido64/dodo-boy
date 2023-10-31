@@ -5,31 +5,23 @@
 
 set -eu
 
-dependencies=(Pillow arrow font-roboto)
-dev_dependencies=(black mypy pylint pytest)
-
 project_root=$(cd -P "$(dirname $0)" && pwd)
-virtual_env="$project_root/.venv"
 
-if [[ $(uname) == MINGW64_NT-* ]]; then
-  venv_activate="$virtual_env/Scripts/activate"
-else
-  venv_activate="$virtual_env/bin/activate"
-fi
+export POETRY_HOME=$project_root/.poetry
 
-if [[ ! -f "$venv_activate" ]]; then
-  python3 -m venv "$virtual_env"
-  source "$venv_activate"
-  #pip install ${dependencies[*]} ${dev_dependencies[*]}
-  pip install --quiet --requirement "$project_root/requirements.txt"
-else
-  source "$venv_activate"
+function poetry {
+  $POETRY_HOME/bin/poetry $@
+}
+
+if [[ ! -d "$POETRY_HOME/venv" ]]; then
+  python3 $POETRY_HOME/install-poetry.py --version 1.6.1
+  poetry install
 fi
 
 case ${1-} in
   "check")
-    pylint dodo
-    mypy --strict dodo
+    poetry run pylint dodo
+    poetry run mypy --strict dodo
     ;;
   "ci")
     ./py format
@@ -37,7 +29,7 @@ case ${1-} in
     ./py test
     ;;
   "format")
-    black dodo
+    poetry run black dodo
     ;;
   "help")
     echo "usage: $0 [COMMAND]"
@@ -60,15 +52,14 @@ case ${1-} in
     ;;
   "run")
     shift
-    python3 dodo $*
+    poetry run python dodo $*
     ;;
   "test")
     shift
-    pytest $*
+    poetry run pytest $*
     ;;
-  "upgrade")
-    pip install --upgrade ${dependencies[*]} ${dev_dependencies[*]}
-    pip freeze > "$project_root/requirements.txt"
+  "update")
+    poetry update
     ;;
   *)
     echo "Python virtual environment is set up!"

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "dodo-boy"
+version = "0.1.0"
+description = "Dodo Boy is a small script for displaying your local weather and schedules for your public transportation routes"
+authors = ["Tommy Nguyen <4123478+tido64@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Pillow = "^10.1.0"
+arrow = "^1.3.0"
+font-roboto = "^0.0.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.10.1"
+mypy = "^1.6.1"
+pylint = "^3.0.2"
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

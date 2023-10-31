@@ -1,4 +1,5 @@
 **/__pycache__/
 .DS_Store
-.venv/
+.poetry/*
+!.poetry/install-poetry.py
 /output.png

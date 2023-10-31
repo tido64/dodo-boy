@@ -67,7 +67,9 @@ print(output)
 
 display = Display(config.inky)
 
-image = Image.new(display.image_mode(), display.size(), display.WHITE)  # pylint: disable=invalid-name
+image = Image.new(  # pylint: disable=invalid-name
+    display.image_mode(), display.size(), display.WHITE
+)
 draw = ImageDraw.Draw(image)  # pylint: disable=invalid-name
 font = ImageFont.truetype(Roboto, 16)  # pylint: disable=invalid-name
 draw.multiline_text((4, 4), output, display.BLACK, font)
