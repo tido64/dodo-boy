@@ -15,6 +15,7 @@ function poetry {
 
 if [[ ! -d "$POETRY_HOME/venv" ]]; then
   python3 $POETRY_HOME/install-poetry.py --version 1.6.1
+  poetry install
 fi
 
 case ${1-} in
