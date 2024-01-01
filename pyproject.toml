@@ -16,7 +16,7 @@ font-roboto = "^0.0.1"
 black = "^23.12.1"
 mypy = "^1.8.0"
 pylint = "^3.0.3"
-pytest = "^7.4.3"
+pytest = "^7.4.4"
 
 [build-system]
 requires = ["poetry-core"]
