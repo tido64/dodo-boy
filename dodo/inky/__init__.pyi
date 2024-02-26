@@ -1,3 +1,4 @@
+# pylint: disable=missing-class-docstring, missing-function-docstring, missing-module-docstring, unused-argument
 from typing import Any
 
 from PIL import Image
