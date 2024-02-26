@@ -1,3 +1,4 @@
+# pylint: disable=missing-class-docstring, missing-function-docstring, missing-module-docstring, unused-argument, undefined-variable
 from datetime import datetime
 from typing import Any, List, Union
 

@@ -1,3 +1,4 @@
+# pylint: disable=invalid-name, missing-class-docstring, missing-function-docstring, missing-module-docstring, redefined-builtin, too-few-public-methods, unused-argument
 from typing import Optional, Tuple
 
 class Image:
