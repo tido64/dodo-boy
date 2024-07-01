@@ -15,7 +15,7 @@ font-roboto = "^0.0.1"
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
 mypy = "^1.10.1"
-pylint = "^3.2.3"
+pylint = "^3.2.5"
 pytest = "^8.2.2"
 
 [build-system]
